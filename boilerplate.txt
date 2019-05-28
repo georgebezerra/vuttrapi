@@ -1,0 +1,15 @@
+24 / 05/2019 - sexta-feira
+
+
+Boilerplate minimalista de testes criado a partir das vídeos aulas:
+
+Raphael Lima - TypeScript,Node, ES6 e Postgres
+
+https://www.udemy.com/typescript-na-pratica-criando-aplicacoes-web-com-typescript/learn/lecture/6831764?start=75#questions
+
+Documentação:
+https://docs.google.com/document/d/1ySMMN1wmi21MzWMm3gSHo6XYbifm6n6KFv2jU6qtgwU/edit
+
+01 - TypeScript
+02 - Testes-unitário
+03 - Testes-integração
