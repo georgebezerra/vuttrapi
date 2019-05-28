@@ -13,3 +13,17 @@ https://docs.google.com/document/d/1ySMMN1wmi21MzWMm3gSHo6XYbifm6n6KFv2jU6qtgwU/
 01 - TypeScript
 02 - Testes-unitário
 03 - Testes-integração
+04 - Gulp
+05 - Integração Contínua
+
+--------------------------------------------------
+  UTILIDADE DO NPX
+
+Eu prefiro evitar instalar pacotes npm globais. Se você tiver sequelize como uma dependência em seu package.json,
+você pode utilizar sequelize-cli via npx .
+
+ $ npx sequelize-cli <command> .
+
+Por exemplo, você poderia fazer, para criar um arquivo de migração:
+
+$ npx sequelize-cli migration:generate --name add-a-column

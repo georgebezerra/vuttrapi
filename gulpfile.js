@@ -22,7 +22,17 @@ gulp.task('copy-opts', function(){
              .pipe(gulp.dest('dist/tests/integration/config'))
 })
 
-gulp.task('default', gulp.series('clean','compile', 'copy-opts'))
+gulp.task("copy-migration-config", function() {
+  return gulp.src('server/config/config.json')
+             .pipe(gulp.dest('dist/server/config'))
+})
+
+gulp.task("build", function() {
+  return gulp.src('server/migrations/*')
+             .pipe(gulp.dest('dist/server/migrations'))
+})
+
+gulp.task('default', gulp.series('clean','compile','copy-opts','copy-migration-config','build'))
 
 /* jshint esversion:6 */
 // const gulp = require('gulp');
