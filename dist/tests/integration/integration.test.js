@@ -36,7 +36,7 @@ describe('Testes de Integração', function () {
             });
         });
     });
-    describe('POST / token', function () {
+    describe('POST /token', function () {
         it('Deve receber um JWT', function (done) {
             var credentials = {
                 email: userDefault.email,
@@ -51,7 +51,7 @@ describe('Testes de Integração', function () {
                 done(error);
             });
         });
-        it('Não dee gerar Token', function (done) {
+        it('Não deve gerar Token', function (done) {
             var credentials = {
                 email: 'email@emailqualquer.com',
                 password: 'qualquer'
@@ -67,26 +67,26 @@ describe('Testes de Integração', function () {
         });
     });
     describe('GET /api/users/all', function () {
-        it('Deve retornar um Json com todos os Usuários', function (done) {
+        it('Deve retornar um Array com todos os Usuários', function (done) {
             helpers_1.request(helpers_1.app)
                 .get('/api/users/all')
                 .set('Content-Type', 'application/json')
-                .set('Authorization', 'JWT ${token}')
+                .set('Authorization', "JWT " + token)
                 .end(function (error, res) {
                 helpers_1.expect(res.status).to.equal(HTTPStatus.OK);
                 helpers_1.expect(res.body.payload).to.be.an('array');
                 helpers_1.expect(res.body.payload[0].name).to.be.equal(userDefault.name);
-                helpers_1.expect(res.body.payload[0].email.to.be.equal(userDefault.email));
+                helpers_1.expect(res.body.payload[0].email).to.be.equal(userDefault.email);
                 done(error);
             });
         });
     });
     describe('GET /api/users/:id', function () {
-        it('Deve retornar um Json com apenas um Usuário', function (done) {
+        it('Deve retornar um Array com apenas um Usuário', function (done) {
             helpers_1.request(helpers_1.app)
                 .get("/api/users/" + userDefault.id)
                 .set('Content-Type', 'application/json')
-                .set('Authorization', 'JWT ${token}')
+                .set('Authorization', "JWT " + token)
                 .end(function (error, res) {
                 helpers_1.expect(res.status).to.equal(HTTPStatus.OK);
                 helpers_1.expect(res.body.payload.id).to.equal(userDefault.id);
@@ -110,7 +110,7 @@ describe('Testes de Integração', function () {
                 .post('/api/users/create')
                 .send(user)
                 .set('Content-Type', 'application/json')
-                .set('Authorization', 'JWT ${token}')
+                .set('Authorization', "JWT " + token)
                 .end(function (error, res) {
                 helpers_1.expect(res.status).to.equal(HTTPStatus.OK);
                 helpers_1.expect(res.body.payload.id).to.eql(user.id);
@@ -123,14 +123,18 @@ describe('Testes de Integração', function () {
     describe('PUT /api/users/:id/update', function () {
         it('Deve atualizar um Usuário', function (done) {
             var user = {
-                nome: '',
-                email: ''
+                nome: 'TesteUpdate',
+                email: 'update@email.com'
             };
             helpers_1.request(helpers_1.app)
                 .put("/api/users/" + userTest.id + "/update")
+                .set('Content-Type', 'application/json')
+                .set('Authorization', "JWT " + token)
                 .send(user)
                 .end(function (error, res) {
                 helpers_1.expect(res.status).to.equal(HTTPStatus.OK);
+                helpers_1.expect(res.body.payload[0]).to.eql(1);
+                done(error);
             });
         });
     });
@@ -139,7 +143,7 @@ describe('Testes de Integração', function () {
             helpers_1.request(helpers_1.app)
                 .delete("/api/users/" + userTest.id + "/destroy")
                 .set('Content-Type', 'application/json')
-                .set('Authorization', 'JWT ${token}')
+                .set('Authorization', "JWT " + token)
                 .end(function (error, res) {
                 helpers_1.expect(res.status).to.equal(HTTPStatus.OK);
                 done(error);

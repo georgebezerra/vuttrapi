@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/16</span>
+        <span class='fraction'>10/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">28.57% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>2/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/16</span>
+        <span class='fraction'>10/15</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -70,67 +70,61 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var controller_1 = require("./controller");
-var UserCtrl;
-var UserRoutes = /** @class */ (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
-    function <span class="fstat-no" title="function not covered" >UserRoutes(</span>) {
-<span class="cstat-no" title="statement not covered" >        UserCtrl = new controller_1.default();</span>
+var UserRoutes = /** @class */ (function () {
+    function UserRoutes() {
     }
-<span class="cstat-no" title="statement not covered" >    UserRoutes.prototype.index = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {</span>
-<span class="cstat-no" title="statement not covered" >        return UserCtrl.getAll(req, res);</span>
+    UserRoutes.prototype.index = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
+<span class="cstat-no" title="statement not covered" >        return controller_1.default.getAll(req, res);</span>
     };
-<span class="cstat-no" title="statement not covered" >    UserRoutes.prototype.create = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {</span>
-<span class="cstat-no" title="statement not covered" >        return UserCtrl.createUser(req, res);</span>
+    UserRoutes.prototype.create = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
+<span class="cstat-no" title="statement not covered" >        return controller_1.default.createUser(req, res);</span>
     };
-<span class="cstat-no" title="statement not covered" >    UserRoutes.prototype.findOne = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {</span>
-<span class="cstat-no" title="statement not covered" >        return UserCtrl.getById(req, res);</span>
+    UserRoutes.prototype.findOne = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
+<span class="cstat-no" title="statement not covered" >        return controller_1.default.getById(req, res);</span>
     };
-<span class="cstat-no" title="statement not covered" >    UserRoutes.prototype.update = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {</span>
-<span class="cstat-no" title="statement not covered" >        return UserCtrl.updateUser(req, res);</span>
+    UserRoutes.prototype.update = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
+<span class="cstat-no" title="statement not covered" >        return controller_1.default.updateUser(req, res);</span>
     };
-<span class="cstat-no" title="statement not covered" >    UserRoutes.prototype.destroy = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {</span>
-<span class="cstat-no" title="statement not covered" >        return UserCtrl.deleteUser(req, res);</span>
+    UserRoutes.prototype.destroy = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
+<span class="cstat-no" title="statement not covered" >        return controller_1.default.deleteUser(req, res);</span>
     };
-<span class="cstat-no" title="statement not covered" >    return UserRoutes;</span>
+    return UserRoutes;
 }());
-<span class="cstat-no" title="statement not covered" >exports.default = UserRoutes;</span>
+exports.default = new UserRoutes();
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 26 2019 12:26:29 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jun 02 2019 14:15:03 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

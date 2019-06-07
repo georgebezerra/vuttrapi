@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var HttpStatus = require("http-status");
 var jwt = require("jwt-simple");
 var bcrypt = require("bcrypt");
-var config = require('../../config/env/config');
+var config = require('../../config/env/config')();
 var Handlers = /** @class */ (function () {
     function Handlers() {
     }

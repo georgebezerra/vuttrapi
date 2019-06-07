@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.81% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/21</span>
+        <span class='fraction'>21/21</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">41.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/12</span>
+        <span class='fraction'>12/12</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -76,53 +76,53 @@
 <a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function <span class="fstat-no" title="function not covered" >createUser(</span>_a) {
-    var id = <span class="cstat-no" title="statement not covered" >_a.id,</span> name = <span class="cstat-no" title="statement not covered" >_a.name,</span> email = <span class="cstat-no" title="statement not covered" >_a.email,</span> password = <span class="cstat-no" title="statement not covered" >_a.password;</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+function createUser(_a) {
+    var id = _a.id, name = _a.name, email = _a.email, password = _a.password;
+    return {
         id: id, name: name, email: email, password: password
     };
 }
 exports.createUser = createUser;
-function <span class="fstat-no" title="function not covered" >createUsers(</span>data) {
-<span class="cstat-no" title="statement not covered" >    return data.map(createUser);</span>
+function createUsers(data) {
+    return data.map(createUser);
 }
 exports.createUsers = createUsers;
-function <span class="fstat-no" title="function not covered" >createUserById(</span>_a) {
-    var id = <span class="cstat-no" title="statement not covered" >_a.id,</span> name = <span class="cstat-no" title="statement not covered" >_a.name,</span> email = <span class="cstat-no" title="statement not covered" >_a.email,</span> password = <span class="cstat-no" title="statement not covered" >_a.password;</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+function createUserById(_a) {
+    var id = _a.id, name = _a.name, email = _a.email, password = _a.password;
+    return {
         id: id, name: name, email: email, password: password
     };
 }
 exports.createUserById = createUserById;
-function <span class="fstat-no" title="function not covered" >createUserByEmail(</span>_a) {
-    var id = <span class="cstat-no" title="statement not covered" >_a.id,</span> name = <span class="cstat-no" title="statement not covered" >_a.name,</span> email = <span class="cstat-no" title="statement not covered" >_a.email,</span> password = <span class="cstat-no" title="statement not covered" >_a.password;</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+function createUserByEmail(_a) {
+    var id = _a.id, name = _a.name, email = _a.email, password = _a.password;
+    return {
         id: id, name: name, email: email, password: password
     };
 }
@@ -133,7 +133,7 @@ exports.createUserByEmail = createUserByEmail;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 26 2019 12:26:29 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jun 02 2019 14:15:03 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

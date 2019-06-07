@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">90.91% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/20</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">55.56% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>5/9</span>
+        <span class='fraction'>20/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">66.67% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/20</span>
+        <span class='fraction'>20/22</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -78,7 +78,9 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -86,30 +88,32 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 var fs = require('fs');
 var path = require('path');
@@ -118,6 +122,7 @@ var basename = path.basename(__filename);
 var config = require('../config/env/config')();
 var env = config.env || <span class="branch-1 cbranch-no" title="branch not covered" >'development';</span>
 var db = {};
+var modelRelations = require('./relations/relations');
 var sequelize;
 <span class="missing-if-branch" title="else path not taken" >E</span>if (config.dbURL) {
     sequelize = new Sequelize(config.dbURL);
@@ -132,23 +137,24 @@ fs
 })
     .forEach(function (file) {
     var model = sequelize['import'](path.join(__dirname, file));
-<span class="cstat-no" title="statement not covered" >    db[model.name] = model;</span>
+    db[model.name] = model;
 });
-<span class="cstat-no" title="statement not covered" >Object.keys(db).forEach(<span class="fstat-no" title="function not covered" >fu</span>nction (modelName) {</span>
-<span class="cstat-no" title="statement not covered" >    if (db[modelName].associate) {</span>
+Object.keys(db).forEach(function (modelName) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (db[modelName].associate) {
 <span class="cstat-no" title="statement not covered" >        db[modelName].associate(db);</span>
     }
 });
-<span class="cstat-no" title="statement not covered" >db.sequelize = sequelize;</span>
-<span class="cstat-no" title="statement not covered" >db.Sequelize = Sequelize;</span>
-<span class="cstat-no" title="statement not covered" >module.exports = db;</span>
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+modelRelations(db);
+module.exports = db;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 26 2019 12:26:29 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jun 02 2019 14:15:03 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -41,7 +41,7 @@ beforeEach((done) => {
   })
 })
 
-describe('POST / token', () => {
+describe('POST /token', () => {
   it('Deve receber um JWT', done => {
     const credentials = {
       email: userDefault.email,
@@ -57,7 +57,7 @@ describe('POST / token', () => {
       })
   })
 
-  it('Não dee gerar Token', done => {
+  it('Não deve gerar Token', done => {
     const credentials = {
       email: 'email@emailqualquer.com',
       password: 'qualquer'
@@ -74,26 +74,26 @@ describe('POST / token', () => {
 })
 
   describe('GET /api/users/all', () => {
-    it('Deve retornar um Json com todos os Usuários', done => {
+    it('Deve retornar um Array com todos os Usuários', done => {
       request(app)
         .get('/api/users/all')
         .set('Content-Type', 'application/json')
-        .set('Authorization', 'JWT ${token}')
+        .set('Authorization', `JWT ${token}`)
         .end((error,res) => {
           expect(res.status).to.equal(HTTPStatus.OK)
           expect(res.body.payload).to.be.an('array')
           expect(res.body.payload[0].name).to.be.equal(userDefault.name)
-          expect(res.body.payload[0].email.to.be.equal(userDefault.email))
+          expect(res.body.payload[0].email).to.be.equal(userDefault.email)
           done(error)
         })
     })
   })
   describe('GET /api/users/:id', () => {
-    it('Deve retornar um Json com apenas um Usuário', done => {
+    it('Deve retornar um Array com apenas um Usuário', done => {
       request(app)
         .get(`/api/users/${userDefault.id}`)
         .set('Content-Type', 'application/json')
-        .set('Authorization', 'JWT ${token}')
+        .set('Authorization', `JWT ${token}`)
         .end((error,res) => {
           expect(res.status).to.equal(HTTPStatus.OK)
           expect(res.body.payload.id).to.equal(userDefault.id)
@@ -117,7 +117,7 @@ describe('POST / token', () => {
       .post('/api/users/create')
       .send(user)
       .set('Content-Type', 'application/json')
-      .set('Authorization', 'JWT ${token}')
+      .set('Authorization', `JWT ${token}`)
         .end((error,res) => {
           expect(res.status).to.equal(HTTPStatus.OK)
           expect(res.body.payload.id).to.eql(user.id)
@@ -130,14 +130,18 @@ describe('POST / token', () => {
   describe('PUT /api/users/:id/update', () => {
     it('Deve atualizar um Usuário', done => {
       const user = {
-        nome: '',
-        email: ''
+        nome: 'TesteUpdate',
+        email: 'update@email.com'
       }
       request(app)
         .put(`/api/users/${userTest.id}/update`)
+        .set('Content-Type', 'application/json')
+        .set('Authorization', `JWT ${token}`)
         .send(user)
         .end((error,res) => {
           expect(res.status).to.equal(HTTPStatus.OK)
+          expect(res.body.payload[0]).to.eql(1)
+          done(error)
         })
     })
   })
@@ -146,7 +150,7 @@ describe('POST / token', () => {
       request(app)
         .delete(`/api/users/${userTest.id}/destroy`)
         .set('Content-Type', 'application/json')
-        .set('Authorization', 'JWT ${token}')
+        .set('Authorization', `JWT ${token}`)
         .end((error,res) => {
           expect(res.status).to.equal(HTTPStatus.OK)
           done(error)

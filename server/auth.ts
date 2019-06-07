@@ -1,7 +1,7 @@
 import * as passport from 'passport'
 import { Strategy, ExtractJwt } from 'passport-jwt'
 import User from './modules/User/service'
-const config = require('./config/env/config')
+const config = require('./config/env/config')()
 
 class Auth {
 

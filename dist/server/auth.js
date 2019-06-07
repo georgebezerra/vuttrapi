@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var passport = require("passport");
 var passport_jwt_1 = require("passport-jwt");
 var service_1 = require("./modules/User/service");
-var config = require('./config/env/config');
+var config = require('./config/env/config')();
 var Auth = /** @class */ (function () {
     function Auth() {
     }

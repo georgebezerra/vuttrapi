@@ -2,7 +2,7 @@ import { Request, Response, ErrorRequestHandler, NextFunction } from 'express'
 import * as HttpStatus from 'http-status'
 import * as jwt from 'jwt-simple'
 import * as bcrypt from 'bcrypt'
-const config = require('../../config/env/config')
+const config = require('../../config/env/config')()
 
 class Handlers {
 
